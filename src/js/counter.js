@@ -1,13 +1,23 @@
-function add(){
-    //Escribir tu código que aumenta
-}
-
-function reset(){
-    //Escribir tu código que hace un reset a 0
-}
-
-function decrease(){
-    //Escribir tu código que resta
+export const increase = () => {
+    const counter = document.getElementById("number");
+    if (counter) {
+        counter.innerHTML = parseInt(counter.innerHTML) + 1;
+    }
 };
 
-export {add, reset, decrease}
+export const decrease = () => {
+    const counter = document.getElementById("number");
+    if (counter) {
+        let currentValue = parseInt(counter.innerHTML);
+        if (currentValue > 0) {
+            counter.innerHTML = currentValue - 1;
+        }
+    }
+};
+
+export const reset = () => {
+    const counter = document.getElementById("number");
+    if (counter) {
+        counter.innerHTML = "0";
+    }
+};
